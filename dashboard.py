@@ -57,6 +57,12 @@ df_weather_boxplot['weathersit'] = df_weather_boxplot['weathersit'].map({
 fig_weather = px.box(df_weather_boxplot, x='weathersit', y='cnt', title='Rentals by Weather Situation')
 st.plotly_chart(fig_weather)
 
+# holiday
+st.subheader("Rentals by Holiday")
+
+fig_holiday = px.box(df_weather_boxplot, x='holiday', y='cnt', title='Rentals on Holiday vs Non-Holiday')
+st.plotly_chart(fig_holiday)
+
 # corr matrix
 st.subheader("Correlation Matrix")
 

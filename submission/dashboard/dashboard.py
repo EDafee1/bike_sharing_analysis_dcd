@@ -3,8 +3,8 @@ import pandas as pd
 import plotly.express as px
 
 # data prep
-path_day = r'day.csv'
-path_hour = r'hour.csv'
+path_day = 'day.csv'
+path_hour = 'hour.csv'
 
 df_day = pd.read_csv(path_day)
 df_hour = pd.read_csv(path_hour)

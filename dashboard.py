@@ -60,7 +60,12 @@ st.plotly_chart(fig_weather)
 # holiday
 st.subheader("Rentals by Holiday")
 
-fig_holiday = px.box(df_weather_boxplot, x='holiday', y='cnt', title='Rentals on Holiday vs Non-Holiday')
+df_holiday_boxplot = df_hour.copy()
+df_holiday_boxplot['holiday'] = df_holiday_boxplot['holiday'].map({
+    0: 'Non-Holiday',
+    1: 'Holiday',
+})
+fig_holiday = px.box(df_holiday_boxplot, x='holiday', y='cnt', title='Rentals on Holiday vs Non-Holiday')
 st.plotly_chart(fig_holiday)
 
 # corr matrix
